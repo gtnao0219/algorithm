@@ -10,5 +10,6 @@ template <typename T = long long> struct Edge {
 };
 
 template <typename T = long long> using Edges = vector<Edge<T>>;
+template <typename T = long long> using Graph = vector<Edges<T>>;
 
 template <typename T = long long> using Matrix = vector<vector<T>>;
