@@ -14,9 +14,8 @@ public:
   int root(int x) {
     if (parent[x] == -1) {
       return x;
-    } else {
-      return parent[x] = root(parent[x]);
     }
+    return parent[x] = root(parent[x]);
   }
 
   void unite(int x, int y) {
