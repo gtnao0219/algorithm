@@ -17,13 +17,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/math/ext_gcd.hpp
       title: src/math/ext_gcd.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/math/gcd.hpp
       title: src/math/gcd.hpp
     - icon: ':heavy_check_mark:'
       path: src/math/is_prime.hpp
       title: src/math/is_prime.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/math/lcm.hpp
       title: src/math/lcm.hpp
     - icon: ':heavy_check_mark:'
@@ -47,6 +47,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/ntl_1_a.test.cpp
       title: test/aoj/ntl_1_a.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/ntl_1_c.test.cpp
+      title: test/aoj/ntl_1_c.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/ntl_1_e.test.cpp
       title: test/aoj/ntl_1_e.test.cpp

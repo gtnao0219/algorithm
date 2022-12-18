@@ -2,13 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/math/lcm.hpp
     title: src/math/lcm.hpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ntl_1_c.test.cpp
+    title: test/aoj/ntl_1_c.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/math/gcd.hpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -23,8 +26,9 @@ data:
   requiredBy:
   - src/math/lcm.hpp
   timestamp: '2022-12-18 20:53:53+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj/ntl_1_c.test.cpp
 documentation_of: src/math/gcd.hpp
 layout: document
 redirect_from:
