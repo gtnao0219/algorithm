@@ -9,10 +9,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/graph/kruskul.hpp
       title: src/graph/kruskul.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/graph/strongly_connected_components.hpp
       title: src/graph/strongly_connected_components.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/graph/template.hpp
       title: src/graph/template.hpp
     - icon: ':heavy_check_mark:'
@@ -76,7 +76,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/grl_2_a.test.cpp
       title: test/aoj/grl_2_a.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/grl_3_c.test.cpp
       title: test/aoj/grl_3_c.test.cpp
     - icon: ':heavy_check_mark:'

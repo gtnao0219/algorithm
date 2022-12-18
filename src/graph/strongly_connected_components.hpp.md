@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/template.hpp
     title: src/graph/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/grl_3_c.test.cpp
     title: test/aoj/grl_3_c.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/graph/strongly_connected_components.hpp\"\n\n#include\
@@ -19,8 +19,9 @@ data:
     \n#line 4 \"src/graph/template.hpp\"\nusing namespace std;\n\ntemplate <typename\
     \ T = long long> struct Edge {\n  int from, to;\n  T cost;\n  Edge(int from, int\
     \ to, T cost = 1) : from(from), to(to), cost(cost) {}\n};\n\ntemplate <typename\
-    \ T = long long> using Edges = vector<Edge<T>>;\n\ntemplate <typename T = long\
-    \ long> using Matrix = vector<vector<T>>;\n#line 7 \"src/graph/strongly_connected_components.hpp\"\
+    \ T = long long> using Edges = vector<Edge<T>>;\ntemplate <typename T = long long>\
+    \ using Graph = vector<Edges<T>>;\n\ntemplate <typename T = long long> using Matrix\
+    \ = vector<vector<T>>;\n#line 7 \"src/graph/strongly_connected_components.hpp\"\
     \n\nstruct StronglyConnectedComponents {\nprivate:\n  int n;\n  Graph<> graph;\n\
     \  Graph<> r_graph;\n  vector<bool> used;\n  vector<int> order, comp;\n\npublic:\n\
     \  StronglyConnectedComponents(int n)\n      : n(n), graph(n), r_graph(n), used(n,\
@@ -55,8 +56,8 @@ data:
   isVerificationFile: false
   path: src/graph/strongly_connected_components.hpp
   requiredBy: []
-  timestamp: '2022-12-19 01:13:24+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-12-19 02:10:28+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl_3_c.test.cpp
 documentation_of: src/graph/strongly_connected_components.hpp
