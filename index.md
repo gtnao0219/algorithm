@@ -32,6 +32,14 @@ data:
     - icon: ':warning:'
       path: src/math/sieve_of_eratosthenes.hpp
       title: src/math/sieve_of_eratosthenes.hpp
+  - name: src/structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/structure/union_find_tree.hpp
+      title: src/structure/union_find_tree.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/structure/weighted_union_find_tree.hpp
+      title: src/structure/weighted_union_find_tree.hpp
   verificationCategories:
   - name: test/aoj
     pages:
@@ -41,6 +49,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/atp1_3_d.test.cpp
       title: test/aoj/atp1_3_d.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_1_a.test.cpp
+      title: test/aoj/dsl_1_a.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_1_b.test.cpp
+      title: test/aoj/dsl_1_b.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/grl_1_b.test.cpp
       title: test/aoj/grl_1_b.test.cpp
