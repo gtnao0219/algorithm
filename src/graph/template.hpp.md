@@ -5,31 +5,41 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/bellman_ford.hpp
     title: src/graph/bellman_ford.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/graph/warshall_floyd.hpp
+    title: src/graph/warshall_floyd.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl_1_b.test.cpp
     title: test/aoj/grl_1_b.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/grl_1_c.test.cpp
+    title: test/aoj/grl_1_c.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/graph/template.hpp\"\n\n#include <bits/stdc++.h>\nusing\
-    \ namespace std;\n\ntemplate <typename T = int> struct Edge {\n  int from, to;\n\
-    \  T cost;\n  Edge(int from, int to, T cost = 1) : from(from), to(to), cost(cost)\
-    \ {}\n};\n\ntemplate <typename T = int> using Edges = vector<Edge<T>>;\n"
+    \ namespace std;\n\ntemplate <typename T = long long> struct Edge {\n  int from,\
+    \ to;\n  T cost;\n  Edge(int from, int to, T cost = 1) : from(from), to(to), cost(cost)\
+    \ {}\n};\n\ntemplate <typename T = long long> using Edges = vector<Edge<T>>;\n\
+    \ntemplate <typename T = long long> using Matrix = vector<vector<T>>;\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\ntemplate\
-    \ <typename T = int> struct Edge {\n  int from, to;\n  T cost;\n  Edge(int from,\
-    \ int to, T cost = 1) : from(from), to(to), cost(cost) {}\n};\n\ntemplate <typename\
-    \ T = int> using Edges = vector<Edge<T>>;\n"
+    \ <typename T = long long> struct Edge {\n  int from, to;\n  T cost;\n  Edge(int\
+    \ from, int to, T cost = 1) : from(from), to(to), cost(cost) {}\n};\n\ntemplate\
+    \ <typename T = long long> using Edges = vector<Edge<T>>;\n\ntemplate <typename\
+    \ T = long long> using Matrix = vector<vector<T>>;\n"
   dependsOn: []
   isVerificationFile: false
   path: src/graph/template.hpp
   requiredBy:
+  - src/graph/warshall_floyd.hpp
   - src/graph/bellman_ford.hpp
-  timestamp: '2022-12-18 19:31:07+09:00'
+  timestamp: '2022-12-18 23:17:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/grl_1_c.test.cpp
   - test/aoj/grl_1_b.test.cpp
 documentation_of: src/graph/template.hpp
 layout: document

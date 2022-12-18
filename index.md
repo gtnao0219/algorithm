@@ -9,6 +9,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/graph/template.hpp
       title: src/graph/template.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/graph/warshall_floyd.hpp
+      title: src/graph/warshall_floyd.hpp
   - name: src/math
     pages:
     - icon: ':heavy_check_mark:'
@@ -61,6 +64,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/grl_1_b.test.cpp
       title: test/aoj/grl_1_b.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/grl_1_c.test.cpp
+      title: test/aoj/grl_1_c.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/ntl_1_a.test.cpp
       title: test/aoj/ntl_1_a.test.cpp
