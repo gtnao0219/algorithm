@@ -1,11 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: src/graph/kruskul.hpp
+    title: src/graph/kruskul.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_1_a.test.cpp
     title: test/aoj/dsl_1_a.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/grl_2_a.test.cpp
+    title: test/aoj/grl_2_a.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -32,10 +38,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: src/structure/union_find_tree.hpp
-  requiredBy: []
+  requiredBy:
+  - src/graph/kruskul.hpp
   timestamp: '2022-12-18 22:46:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/grl_2_a.test.cpp
   - test/aoj/dsl_1_a.test.cpp
 documentation_of: src/structure/union_find_tree.hpp
 layout: document
