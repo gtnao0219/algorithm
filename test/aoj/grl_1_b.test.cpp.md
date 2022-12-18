@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/bellman_ford.hpp
     title: src/graph/bellman_ford.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/graph/template.hpp
     title: src/graph/template.hpp
   _extendedRequiredBy: []

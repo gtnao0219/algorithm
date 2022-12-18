@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/kruskul.hpp
     title: src/graph/kruskul.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/graph/template.hpp
     title: src/graph/template.hpp
   - icon: ':heavy_check_mark:'
