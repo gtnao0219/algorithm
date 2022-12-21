@@ -44,6 +44,11 @@ data:
     - icon: ':warning:'
       path: src/math/sieve_of_eratosthenes.hpp
       title: src/math/sieve_of_eratosthenes.hpp
+  - name: src/string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/string/z_algorithm.hpp
+      title: src/string/z_algorithm.hpp
   - name: src/structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -91,5 +96,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/ntl_1_e.test.cpp
       title: test/aoj/ntl_1_e.test.cpp
+  - name: test/yosupo_judge
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo_judge/zalgorithm.test.cpp
+      title: test/yosupo_judge/zalgorithm.test.cpp
 layout: toppage
 ---
