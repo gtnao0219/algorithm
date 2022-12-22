@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/dp/cumulative_sum.hpp
       title: src/dp/cumulative_sum.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/dp/cumulative_sum_2d.hpp
+      title: src/dp/cumulative_sum_2d.hpp
   - name: src/graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -68,6 +71,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/0516.test.cpp
       title: test/aoj/0516.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/0560.test.cpp
+      title: test/aoj/0560.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/alds1_1_c.test.cpp
       title: test/aoj/alds1_1_c.test.cpp
