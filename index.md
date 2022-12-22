@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: src/dp
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/dp/cumulative_sum.hpp
+      title: src/dp/cumulative_sum.hpp
   - name: src/graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -60,6 +65,9 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/0516.test.cpp
+      title: test/aoj/0516.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/alds1_1_c.test.cpp
       title: test/aoj/alds1_1_c.test.cpp
