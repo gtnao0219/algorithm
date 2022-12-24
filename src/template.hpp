@@ -32,3 +32,10 @@ ostream &operator<<(ostream &os, const vector<vector<T>> &v) {
   }
   return os;
 }
+
+inline void io_setup(int precision = 15) {
+  cin.tie(nullptr);
+  ios::sync_with_stdio(false);
+  cout << fixed << setprecision(precision);
+  cerr << fixed << setprecision(precision);
+}
