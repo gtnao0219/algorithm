@@ -73,6 +73,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/structure/weighted_union_find_tree.hpp
       title: src/structure/weighted_union_find_tree.hpp
+  - name: src
+    pages:
+    - icon: ':warning:'
+      path: src/template.hpp
+      title: src/template.hpp
   verificationCategories:
   - name: test/aoj
     pages:
