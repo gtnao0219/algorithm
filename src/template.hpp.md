@@ -19,7 +19,9 @@ data:
     \  return os;\n}\n\ntemplate <typename T>\nostream &operator<<(ostream &os, const\
     \ vector<vector<T>> &v) {\n  rep(i, v.size()) {\n    rep(j, v[i].size()) { os\
     \ << v[i][j] << (j < v[j].size() - 1 ? \" \" : \"\"); }\n    os << endl;\n  }\n\
-    \  return os;\n}\n"
+    \  return os;\n}\n\ninline void io_setup(int precision = 15) {\n  cin.tie(nullptr);\n\
+    \  ios::sync_with_stdio(false);\n  cout << fixed << setprecision(precision);\n\
+    \  cerr << fixed << setprecision(precision);\n}\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\nusing ll\
     \ = long long;\nusing vi = vector<int>;\nusing vll = vector<ll>;\nusing vvi =\
     \ vector<vi>;\nusing vvll = vector<vll>;\nusing vs = vector<string>;\n\n#define\
@@ -31,12 +33,14 @@ data:
     \  return os;\n}\n\ntemplate <typename T>\nostream &operator<<(ostream &os, const\
     \ vector<vector<T>> &v) {\n  rep(i, v.size()) {\n    rep(j, v[i].size()) { os\
     \ << v[i][j] << (j < v[j].size() - 1 ? \" \" : \"\"); }\n    os << endl;\n  }\n\
-    \  return os;\n}\n"
+    \  return os;\n}\n\ninline void io_setup(int precision = 15) {\n  cin.tie(nullptr);\n\
+    \  ios::sync_with_stdio(false);\n  cout << fixed << setprecision(precision);\n\
+    \  cerr << fixed << setprecision(precision);\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: src/template.hpp
   requiredBy: []
-  timestamp: '2022-12-24 14:26:37+09:00'
+  timestamp: '2022-12-24 14:34:43+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/template.hpp
