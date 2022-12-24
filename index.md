@@ -52,6 +52,11 @@ data:
     - icon: ':warning:'
       path: src/math/sieve_of_eratosthenes.hpp
       title: src/math/sieve_of_eratosthenes.hpp
+  - name: src/search
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/search/binary_search.hpp
+      title: src/search/binary_search.hpp
   - name: src/string
     pages:
     - icon: ':heavy_check_mark:'
@@ -59,6 +64,9 @@ data:
       title: src/string/z_algorithm.hpp
   - name: src/structure
     pages:
+    - icon: ':heavy_check_mark:'
+      path: src/structure/segment_tree.hpp
+      title: src/structure/segment_tree.hpp
     - icon: ':heavy_check_mark:'
       path: src/structure/union_find_tree.hpp
       title: src/structure/union_find_tree.hpp
@@ -78,6 +86,9 @@ data:
       path: test/aoj/alds1_1_c.test.cpp
       title: test/aoj/alds1_1_c.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/aoj/alds1_4_b.test.cpp
+      title: test/aoj/alds1_4_b.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj/atp1_3_d.test.cpp
       title: test/aoj/atp1_3_d.test.cpp
     - icon: ':heavy_check_mark:'
@@ -86,6 +97,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/dsl_1_b.test.cpp
       title: test/aoj/dsl_1_b.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_2_a.test.cpp
+      title: test/aoj/dsl_2_a.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/grl_1_b.test.cpp
       title: test/aoj/grl_1_b.test.cpp
