@@ -18,6 +18,9 @@ data:
       path: src/graph/diameter.hpp
       title: src/graph/diameter.hpp
     - icon: ':heavy_check_mark:'
+      path: src/graph/dijkstra.hpp
+      title: src/graph/dijkstra.hpp
+    - icon: ':heavy_check_mark:'
       path: src/graph/kruskul.hpp
       title: src/graph/kruskul.hpp
     - icon: ':heavy_check_mark:'
@@ -108,6 +111,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/dsl_2_a.test.cpp
       title: test/aoj/dsl_2_a.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/grl_1_a.test.cpp
+      title: test/aoj/grl_1_a.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/grl_1_b.test.cpp
       title: test/aoj/grl_1_b.test.cpp
