@@ -49,6 +49,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/math/lcm.hpp
       title: src/math/lcm.hpp
+    - icon: ':warning:'
+      path: src/math/mod_int.hpp
+      title: src/math/mod_int.hpp
     - icon: ':heavy_check_mark:'
       path: src/math/mod_pow.hpp
       title: src/math/mod_pow.hpp
