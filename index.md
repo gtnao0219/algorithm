@@ -9,6 +9,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/dp/cumulative_sum_2d.hpp
       title: src/dp/cumulative_sum_2d.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/dp/imos.hpp
+      title: src/dp/imos.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/dp/imos_2d.hpp
+      title: src/dp/imos_2d.hpp
   - name: src/graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -61,6 +67,11 @@ data:
     - icon: ':warning:'
       path: src/math/sieve_of_eratosthenes.hpp
       title: src/math/sieve_of_eratosthenes.hpp
+  - name: src/other
+    pages:
+    - icon: ':warning:'
+      path: src/other/gird.hpp
+      title: src/other/gird.hpp
   - name: src/search
     pages:
     - icon: ':heavy_check_mark:'
@@ -114,6 +125,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/dsl_2_a.test.cpp
       title: test/aoj/dsl_2_a.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_5_a.test.cpp
+      title: test/aoj/dsl_5_a.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_5_b.test.cpp
+      title: test/aoj/dsl_5_b.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/grl_1_a.test.cpp
       title: test/aoj/grl_1_a.test.cpp
