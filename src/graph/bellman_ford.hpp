@@ -5,26 +5,48 @@ using namespace std;
 
 #include "./template.hpp"
 
-template <typename T>
-vector<int> bellman_ford(const Edges<T> &edges, int V, int s) {
-  const T INF = numeric_limits<T>::max();
-  vector<T> dist(V, INF);
-  dist[s] = 0;
-  for (int i = 0; i < V - 1; ++i) {
-    for (auto &e : edges) {
-      if (dist[e.from] == INF) {
+template <typename T> struct BellmanFord {
+private:
+  int n;
+  int start;
+  Edges<T> edges;
+  vector<T> dist;
+  bool _has_negative_cycle = false;
+  long long MAX = numeric_limits<T>::max();
+
+public:
+  BellmanFord(int n, int start) : n(n), start(start) {
+    dist.resize(n, MAX);
+    dist[start] = 0;
+  }
+
+  void add_edge(int start, int to, long long cost) {
+    edges.emplace_back(start, to, cost);
+  }
+
+  void build() {
+    for (int i = 0; i < n - 1; ++i) {
+      for (auto &edge : edges) {
+        if (dist[edge.from] == MAX) {
+          continue;
+        }
+        dist[edge.to] = min(dist[edge.to], dist[edge.from] + edge.cost);
+      }
+    }
+    for (auto &edge : edges) {
+      if (dist[edge.from] == MAX) {
         continue;
       }
-      dist[e.to] = min(dist[e.to], dist[e.from] + e.cost);
+      if (dist[edge.to] > dist[edge.from] + edge.cost) {
+        _has_negative_cycle = true;
+        break;
+      }
     }
   }
-  for (auto &e : edges) {
-    if (dist[e.from] == INF) {
-      continue;
-    }
-    if (dist[e.to] > dist[e.from] + e.cost) {
-      return vector<T>();
-    }
-  }
-  return dist;
-}
+
+  T shortest_path_value(int t) { return dist[t]; }
+
+  bool is_unreachable(int t) { return dist[t] == MAX; }
+
+  bool has_negative_cycle() { return _has_negative_cycle; }
+};

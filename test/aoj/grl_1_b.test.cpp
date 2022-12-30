@@ -10,21 +10,22 @@ using namespace std;
 int main() {
   int V, E, r;
   cin >> V >> E >> r;
-  Edges<int> edges;
+  BellmanFord<int> bellman_ford(V, r);
+  Edges<long long> edges;
   for (int i = 0; i < E; ++i) {
     int s, t, d;
     cin >> s >> t >> d;
-    edges.emplace_back(s, t, d);
+    bellman_ford.add_edge(s, t, d);
   }
-  auto dist = bellman_ford(edges, V, r);
-  if (dist.empty()) {
+  bellman_ford.build();
+  if (bellman_ford.has_negative_cycle()) {
     cout << "NEGATIVE CYCLE" << endl;
   } else {
     for (int i = 0; i < V; ++i) {
-      if (dist[i] == numeric_limits<int>::max()) {
+      if (bellman_ford.is_unreachable(i)) {
         cout << "INF" << endl;
       } else {
-        cout << dist[i] << endl;
+        cout << bellman_ford.shortest_path_value(i) << endl;
       }
     }
   }
