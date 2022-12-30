@@ -47,6 +47,9 @@ data:
       path: src/math/euler_phi.hpp
       title: src/math/euler_phi.hpp
     - icon: ':heavy_check_mark:'
+      path: src/math/euler_phi_table.hpp
+      title: src/math/euler_phi_table.hpp
+    - icon: ':heavy_check_mark:'
       path: src/math/ext_gcd.hpp
       title: src/math/ext_gcd.hpp
     - icon: ':heavy_check_mark:'
@@ -110,6 +113,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/0560.test.cpp
       title: test/aoj/0560.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/2286.test.cpp
+      title: test/aoj/2286.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/alds1_1_c.test.cpp
       title: test/aoj/alds1_1_c.test.cpp
