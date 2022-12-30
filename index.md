@@ -90,6 +90,9 @@ data:
       title: src/string/z_algorithm.hpp
   - name: src/structure
     pages:
+    - icon: ':warning:'
+      path: src/structure/bit_index_tree.hpp
+      title: src/structure/bit_index_tree.hpp
     - icon: ':heavy_check_mark:'
       path: src/structure/lazy_segment_tree.hpp
       title: src/structure/lazy_segment_tree.hpp
