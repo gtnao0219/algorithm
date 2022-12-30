@@ -44,6 +44,9 @@ data:
       path: src/math/divisor.hpp
       title: src/math/divisor.hpp
     - icon: ':heavy_check_mark:'
+      path: src/math/euler_phi.hpp
+      title: src/math/euler_phi.hpp
+    - icon: ':heavy_check_mark:'
       path: src/math/ext_gcd.hpp
       title: src/math/ext_gcd.hpp
     - icon: ':heavy_check_mark:'
@@ -158,6 +161,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/ntl_1_c.test.cpp
       title: test/aoj/ntl_1_c.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/ntl_1_d.test.cpp
+      title: test/aoj/ntl_1_d.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/ntl_1_e.test.cpp
       title: test/aoj/ntl_1_e.test.cpp
