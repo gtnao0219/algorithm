@@ -21,29 +21,41 @@ data:
     \ cost(cost) {}\n};\n\ntemplate <typename T = long long> using Edges = vector<Edge<T>>;\n\
     template <typename T = long long> using Graph = vector<Edges<T>>;\n\ntemplate\
     \ <typename T = long long> using Matrix = vector<vector<T>>;\n#line 7 \"src/graph/bellman_ford.hpp\"\
-    \n\ntemplate <typename T>\nvector<int> bellman_ford(const Edges<T> &edges, int\
-    \ V, int s) {\n  const T INF = numeric_limits<T>::max();\n  vector<T> dist(V,\
-    \ INF);\n  dist[s] = 0;\n  for (int i = 0; i < V - 1; ++i) {\n    for (auto &e\
-    \ : edges) {\n      if (dist[e.from] == INF) {\n        continue;\n      }\n \
-    \     dist[e.to] = min(dist[e.to], dist[e.from] + e.cost);\n    }\n  }\n  for\
-    \ (auto &e : edges) {\n    if (dist[e.from] == INF) {\n      continue;\n    }\n\
-    \    if (dist[e.to] > dist[e.from] + e.cost) {\n      return vector<T>();\n  \
-    \  }\n  }\n  return dist;\n}\n"
+    \n\ntemplate <typename T> struct BellmanFord {\nprivate:\n  int n;\n  int start;\n\
+    \  Edges<T> edges;\n  vector<T> dist;\n  bool _has_negative_cycle = false;\n \
+    \ long long MAX = numeric_limits<T>::max();\n\npublic:\n  BellmanFord(int n, int\
+    \ start) : n(n), start(start) {\n    dist.resize(n, MAX);\n    dist[start] = 0;\n\
+    \  }\n\n  void add_edge(int start, int to, long long cost) {\n    edges.emplace_back(start,\
+    \ to, cost);\n  }\n\n  void build() {\n    for (int i = 0; i < n - 1; ++i) {\n\
+    \      for (auto &edge : edges) {\n        if (dist[edge.from] == MAX) {\n   \
+    \       continue;\n        }\n        dist[edge.to] = min(dist[edge.to], dist[edge.from]\
+    \ + edge.cost);\n      }\n    }\n    for (auto &edge : edges) {\n      if (dist[edge.from]\
+    \ == MAX) {\n        continue;\n      }\n      if (dist[edge.to] > dist[edge.from]\
+    \ + edge.cost) {\n        _has_negative_cycle = true;\n        break;\n      }\n\
+    \    }\n  }\n\n  T shortest_path_value(int t) { return dist[t]; }\n\n  bool is_unreachable(int\
+    \ t) { return dist[t] == MAX; }\n\n  bool has_negative_cycle() { return _has_negative_cycle;\
+    \ }\n};\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
-    \ \"./template.hpp\"\n\ntemplate <typename T>\nvector<int> bellman_ford(const\
-    \ Edges<T> &edges, int V, int s) {\n  const T INF = numeric_limits<T>::max();\n\
-    \  vector<T> dist(V, INF);\n  dist[s] = 0;\n  for (int i = 0; i < V - 1; ++i)\
-    \ {\n    for (auto &e : edges) {\n      if (dist[e.from] == INF) {\n        continue;\n\
-    \      }\n      dist[e.to] = min(dist[e.to], dist[e.from] + e.cost);\n    }\n\
-    \  }\n  for (auto &e : edges) {\n    if (dist[e.from] == INF) {\n      continue;\n\
-    \    }\n    if (dist[e.to] > dist[e.from] + e.cost) {\n      return vector<T>();\n\
-    \    }\n  }\n  return dist;\n}\n"
+    \ \"./template.hpp\"\n\ntemplate <typename T> struct BellmanFord {\nprivate:\n\
+    \  int n;\n  int start;\n  Edges<T> edges;\n  vector<T> dist;\n  bool _has_negative_cycle\
+    \ = false;\n  long long MAX = numeric_limits<T>::max();\n\npublic:\n  BellmanFord(int\
+    \ n, int start) : n(n), start(start) {\n    dist.resize(n, MAX);\n    dist[start]\
+    \ = 0;\n  }\n\n  void add_edge(int start, int to, long long cost) {\n    edges.emplace_back(start,\
+    \ to, cost);\n  }\n\n  void build() {\n    for (int i = 0; i < n - 1; ++i) {\n\
+    \      for (auto &edge : edges) {\n        if (dist[edge.from] == MAX) {\n   \
+    \       continue;\n        }\n        dist[edge.to] = min(dist[edge.to], dist[edge.from]\
+    \ + edge.cost);\n      }\n    }\n    for (auto &edge : edges) {\n      if (dist[edge.from]\
+    \ == MAX) {\n        continue;\n      }\n      if (dist[edge.to] > dist[edge.from]\
+    \ + edge.cost) {\n        _has_negative_cycle = true;\n        break;\n      }\n\
+    \    }\n  }\n\n  T shortest_path_value(int t) { return dist[t]; }\n\n  bool is_unreachable(int\
+    \ t) { return dist[t] == MAX; }\n\n  bool has_negative_cycle() { return _has_negative_cycle;\
+    \ }\n};\n"
   dependsOn:
   - src/graph/template.hpp
   isVerificationFile: false
   path: src/graph/bellman_ford.hpp
   requiredBy: []
-  timestamp: '2022-12-19 02:10:28+09:00'
+  timestamp: '2022-12-30 13:40:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl_1_b.test.cpp

@@ -27,39 +27,45 @@ data:
     \ {}\n};\n\ntemplate <typename T = long long> using Edges = vector<Edge<T>>;\n\
     template <typename T = long long> using Graph = vector<Edges<T>>;\n\ntemplate\
     \ <typename T = long long> using Matrix = vector<vector<T>>;\n#line 7 \"src/graph/bellman_ford.hpp\"\
-    \n\ntemplate <typename T>\nvector<int> bellman_ford(const Edges<T> &edges, int\
-    \ V, int s) {\n  const T INF = numeric_limits<T>::max();\n  vector<T> dist(V,\
-    \ INF);\n  dist[s] = 0;\n  for (int i = 0; i < V - 1; ++i) {\n    for (auto &e\
-    \ : edges) {\n      if (dist[e.from] == INF) {\n        continue;\n      }\n \
-    \     dist[e.to] = min(dist[e.to], dist[e.from] + e.cost);\n    }\n  }\n  for\
-    \ (auto &e : edges) {\n    if (dist[e.from] == INF) {\n      continue;\n    }\n\
-    \    if (dist[e.to] > dist[e.from] + e.cost) {\n      return vector<T>();\n  \
-    \  }\n  }\n  return dist;\n}\n#line 9 \"test/aoj/grl_1_b.test.cpp\"\n\nint main()\
-    \ {\n  int V, E, r;\n  cin >> V >> E >> r;\n  Edges<int> edges;\n  for (int i\
-    \ = 0; i < E; ++i) {\n    int s, t, d;\n    cin >> s >> t >> d;\n    edges.emplace_back(s,\
-    \ t, d);\n  }\n  auto dist = bellman_ford(edges, V, r);\n  if (dist.empty()) {\n\
-    \    cout << \"NEGATIVE CYCLE\" << endl;\n  } else {\n    for (int i = 0; i <\
-    \ V; ++i) {\n      if (dist[i] == numeric_limits<int>::max()) {\n        cout\
-    \ << \"INF\" << endl;\n      } else {\n        cout << dist[i] << endl;\n    \
-    \  }\n    }\n  }\n  return 0;\n}\n"
+    \n\ntemplate <typename T> struct BellmanFord {\nprivate:\n  int n;\n  int start;\n\
+    \  Edges<T> edges;\n  vector<T> dist;\n  bool _has_negative_cycle = false;\n \
+    \ long long MAX = numeric_limits<T>::max();\n\npublic:\n  BellmanFord(int n, int\
+    \ start) : n(n), start(start) {\n    dist.resize(n, MAX);\n    dist[start] = 0;\n\
+    \  }\n\n  void add_edge(int start, int to, long long cost) {\n    edges.emplace_back(start,\
+    \ to, cost);\n  }\n\n  void build() {\n    for (int i = 0; i < n - 1; ++i) {\n\
+    \      for (auto &edge : edges) {\n        if (dist[edge.from] == MAX) {\n   \
+    \       continue;\n        }\n        dist[edge.to] = min(dist[edge.to], dist[edge.from]\
+    \ + edge.cost);\n      }\n    }\n    for (auto &edge : edges) {\n      if (dist[edge.from]\
+    \ == MAX) {\n        continue;\n      }\n      if (dist[edge.to] > dist[edge.from]\
+    \ + edge.cost) {\n        _has_negative_cycle = true;\n        break;\n      }\n\
+    \    }\n  }\n\n  T shortest_path_value(int t) { return dist[t]; }\n\n  bool is_unreachable(int\
+    \ t) { return dist[t] == MAX; }\n\n  bool has_negative_cycle() { return _has_negative_cycle;\
+    \ }\n};\n#line 9 \"test/aoj/grl_1_b.test.cpp\"\n\nint main() {\n  int V, E, r;\n\
+    \  cin >> V >> E >> r;\n  BellmanFord<int> bellman_ford(V, r);\n  Edges<long long>\
+    \ edges;\n  for (int i = 0; i < E; ++i) {\n    int s, t, d;\n    cin >> s >> t\
+    \ >> d;\n    bellman_ford.add_edge(s, t, d);\n  }\n  bellman_ford.build();\n \
+    \ if (bellman_ford.has_negative_cycle()) {\n    cout << \"NEGATIVE CYCLE\" <<\
+    \ endl;\n  } else {\n    for (int i = 0; i < V; ++i) {\n      if (bellman_ford.is_unreachable(i))\
+    \ {\n        cout << \"INF\" << endl;\n      } else {\n        cout << bellman_ford.shortest_path_value(i)\
+    \ << endl;\n      }\n    }\n  }\n  return 0;\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n  \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../../src/graph/bellman_ford.hpp\"\
     \n#include \"../../src/graph/template.hpp\"\n\nint main() {\n  int V, E, r;\n\
-    \  cin >> V >> E >> r;\n  Edges<int> edges;\n  for (int i = 0; i < E; ++i) {\n\
-    \    int s, t, d;\n    cin >> s >> t >> d;\n    edges.emplace_back(s, t, d);\n\
-    \  }\n  auto dist = bellman_ford(edges, V, r);\n  if (dist.empty()) {\n    cout\
-    \ << \"NEGATIVE CYCLE\" << endl;\n  } else {\n    for (int i = 0; i < V; ++i)\
-    \ {\n      if (dist[i] == numeric_limits<int>::max()) {\n        cout << \"INF\"\
-    \ << endl;\n      } else {\n        cout << dist[i] << endl;\n      }\n    }\n\
-    \  }\n  return 0;\n}\n"
+    \  cin >> V >> E >> r;\n  BellmanFord<int> bellman_ford(V, r);\n  Edges<long long>\
+    \ edges;\n  for (int i = 0; i < E; ++i) {\n    int s, t, d;\n    cin >> s >> t\
+    \ >> d;\n    bellman_ford.add_edge(s, t, d);\n  }\n  bellman_ford.build();\n \
+    \ if (bellman_ford.has_negative_cycle()) {\n    cout << \"NEGATIVE CYCLE\" <<\
+    \ endl;\n  } else {\n    for (int i = 0; i < V; ++i) {\n      if (bellman_ford.is_unreachable(i))\
+    \ {\n        cout << \"INF\" << endl;\n      } else {\n        cout << bellman_ford.shortest_path_value(i)\
+    \ << endl;\n      }\n    }\n  }\n  return 0;\n}\n"
   dependsOn:
   - src/graph/bellman_ford.hpp
   - src/graph/template.hpp
   isVerificationFile: true
   path: test/aoj/grl_1_b.test.cpp
   requiredBy: []
-  timestamp: '2022-12-19 02:10:28+09:00'
+  timestamp: '2022-12-30 13:40:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/grl_1_b.test.cpp
