@@ -12,7 +12,7 @@ private:
   Edges<T> edges;
   vector<T> dist;
   bool _has_negative_cycle = false;
-  long long MAX = numeric_limits<T>::max();
+  T MAX = numeric_limits<T>::max();
 
 public:
   BellmanFord(int n, int start) : n(n), start(start) {
