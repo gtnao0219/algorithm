@@ -43,6 +43,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/math/divisor.hpp
       title: src/math/divisor.hpp
+    - icon: ':warning:'
+      path: src/math/eratosthenes.hpp
+      title: src/math/eratosthenes.hpp
     - icon: ':heavy_check_mark:'
       path: src/math/euler_phi.hpp
       title: src/math/euler_phi.hpp
@@ -70,9 +73,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/math/prime_factor.hpp
       title: src/math/prime_factor.hpp
-    - icon: ':warning:'
-      path: src/math/sieve_of_eratosthenes.hpp
-      title: src/math/sieve_of_eratosthenes.hpp
   - name: src/other
     pages:
     - icon: ':warning:'
@@ -90,6 +90,9 @@ data:
       title: src/string/z_algorithm.hpp
   - name: src/structure
     pages:
+    - icon: ':heavy_check_mark:'
+      path: src/structure/lazy_segment_tree.hpp
+      title: src/structure/lazy_segment_tree.hpp
     - icon: ':heavy_check_mark:'
       path: src/structure/segment_tree.hpp
       title: src/structure/segment_tree.hpp
@@ -134,6 +137,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/dsl_2_a.test.cpp
       title: test/aoj/dsl_2_a.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_2_h.test.cpp
+      title: test/aoj/dsl_2_h.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/dsl_5_a.test.cpp
       title: test/aoj/dsl_5_a.test.cpp
