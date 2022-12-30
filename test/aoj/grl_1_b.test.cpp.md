@@ -29,9 +29,9 @@ data:
     \ <typename T = long long> using Matrix = vector<vector<T>>;\n#line 7 \"src/graph/bellman_ford.hpp\"\
     \n\ntemplate <typename T> struct BellmanFord {\nprivate:\n  int n;\n  int start;\n\
     \  Edges<T> edges;\n  vector<T> dist;\n  bool _has_negative_cycle = false;\n \
-    \ long long MAX = numeric_limits<T>::max();\n\npublic:\n  BellmanFord(int n, int\
-    \ start) : n(n), start(start) {\n    dist.resize(n, MAX);\n    dist[start] = 0;\n\
-    \  }\n\n  void add_edge(int start, int to, long long cost) {\n    edges.emplace_back(start,\
+    \ T MAX = numeric_limits<T>::max();\n\npublic:\n  BellmanFord(int n, int start)\
+    \ : n(n), start(start) {\n    dist.resize(n, MAX);\n    dist[start] = 0;\n  }\n\
+    \n  void add_edge(int start, int to, long long cost) {\n    edges.emplace_back(start,\
     \ to, cost);\n  }\n\n  void build() {\n    for (int i = 0; i < n - 1; ++i) {\n\
     \      for (auto &edge : edges) {\n        if (dist[edge.from] == MAX) {\n   \
     \       continue;\n        }\n        dist[edge.to] = min(dist[edge.to], dist[edge.from]\
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: test/aoj/grl_1_b.test.cpp
   requiredBy: []
-  timestamp: '2022-12-30 13:40:04+09:00'
+  timestamp: '2022-12-30 13:43:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/grl_1_b.test.cpp
