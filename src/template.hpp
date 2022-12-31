@@ -20,15 +20,25 @@ ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
 }
 
 template <typename T> ostream &operator<<(ostream &os, const vector<T> &v) {
-  rep(i, v.size()) { os << v[i] << (i < v.size() - 1 ? " " : ""); }
+  rep(i, v.size()) { os << v[i] << (i < (ll)v.size() - 1 ? " " : ""); }
   return os;
 }
 
 template <typename T>
 ostream &operator<<(ostream &os, const vector<vector<T>> &v) {
   rep(i, v.size()) {
-    rep(j, v[i].size()) { os << v[i][j] << (j < v[j].size() - 1 ? " " : ""); }
+    rep(j, v[i].size()) {
+      os << v[i][j] << (j < (ll)v[i].size() - 1 ? " " : "");
+    }
     os << endl;
+  }
+  return os;
+}
+
+template <typename T, typename U>
+ostream &operator<<(ostream &os, const map<T, U> &v) {
+  for (const auto &p : v) {
+    os << p.first << ": " << p.second << endl;
   }
   return os;
 }
