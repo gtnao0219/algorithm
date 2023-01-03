@@ -32,7 +32,7 @@ int main() {
     cin >> y1 >> x1 >> y2 >> x2;
     --y1;
     --x1;
-    cout << jcum.sum(x1, y1, y2, x2) << " " << ocum.sum(x1, y1, y2, x2) << " "
-         << icum.sum(x1, y1, y2, x2) << endl;
+    cout << jcum.sum(x1, y1, x2, y2) << " " << ocum.sum(x1, y1, x2, y2) << " "
+         << icum.sum(x1, y1, x2, y2) << endl;
   }
 }

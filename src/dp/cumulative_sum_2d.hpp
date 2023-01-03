@@ -20,7 +20,7 @@ public:
   }
 
   // [x1, x2) [y1, y2), x1 and x2, y1, y2 is 0-indexed.
-  T sum(int x1, int y1, int y2, int x2) {
+  T sum(int x1, int y1, int x2, int y2) {
     return s[y2][x2] - s[y1][x2] - s[y2][x1] + s[y1][x1];
   }
 };
