@@ -13,6 +13,8 @@ using vs = vector<string>;
 #define REP(i, a, n) for (ll i = (a); i < (ll)(n); ++i)
 #define rep(i, n) REP(i, 0, n)
 
+#define what_is(x) cerr << #x << " is " << x << endl;
+
 template <typename T1, typename T2>
 ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
   os << p.first << " " << p.second;
