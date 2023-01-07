@@ -40,10 +40,10 @@ template <int MOD> struct Mint {
     val = val * r.val % MOD;
     return *this;
   }
-  constexpr Mint operator==(const Mint &r) const noexcept {
+  constexpr bool operator==(const Mint &r) const noexcept {
     return this->val == r.val;
   }
-  constexpr Mint operator!=(const Mint &r) const noexcept {
+  constexpr bool operator!=(const Mint &r) const noexcept {
     return this->val != r.val;
   }
   friend constexpr istream &operator>>(istream &is, Mint<MOD> &x) noexcept {
@@ -74,7 +74,6 @@ public:
     }
   }
 
-private:
   constexpr T combination(int n, int k) const noexcept {
     if (n < k || n < 0 || k < 0)
       return 0;
