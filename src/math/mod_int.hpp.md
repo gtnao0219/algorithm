@@ -22,8 +22,8 @@ data:
     \  }\n  constexpr Mint &operator-=(const Mint &r) noexcept {\n    val -= r.val;\n\
     \    if (val < 0)\n      val += MOD;\n    return *this;\n  }\n  constexpr Mint\
     \ &operator*=(const Mint &r) noexcept {\n    val = val * r.val % MOD;\n    return\
-    \ *this;\n  }\n  constexpr Mint operator==(const Mint &r) const noexcept {\n \
-    \   return this->val == r.val;\n  }\n  constexpr Mint operator!=(const Mint &r)\
+    \ *this;\n  }\n  constexpr bool operator==(const Mint &r) const noexcept {\n \
+    \   return this->val == r.val;\n  }\n  constexpr bool operator!=(const Mint &r)\
     \ const noexcept {\n    return this->val != r.val;\n  }\n  friend constexpr istream\
     \ &operator>>(istream &is, Mint<MOD> &x) noexcept {\n    is >> x.val;\n    x.val\
     \ %= MOD;\n    if (x.val < 0)\n      x.val += MOD;\n    return is;\n  }\n  friend\
@@ -34,8 +34,8 @@ data:
     \      : fact(n, 1), inv(n, 1), fact_inv(n, 1) {\n    int MOD = fact[0].get_mod();\n\
     \    for (int i = 2; i < n; ++i) {\n      fact[i] = fact[i - 1] * i;\n      inv[i]\
     \ = -inv[MOD % i] * (MOD / i);\n      fact_inv[i] = fact_inv[i - 1] * inv[i];\n\
-    \    }\n  }\n\nprivate:\n  constexpr T combination(int n, int k) const noexcept\
-    \ {\n    if (n < k || n < 0 || k < 0)\n      return 0;\n    return fact[n] * fact_inv[k]\
+    \    }\n  }\n\n  constexpr T combination(int n, int k) const noexcept {\n    if\
+    \ (n < k || n < 0 || k < 0)\n      return 0;\n    return fact[n] * fact_inv[k]\
     \ * fact_inv[n - k];\n  }\n};\n\nusing Mint1 = Mint<MOD1>;\nusing Mint2 = Mint<MOD2>;\n\
     using Mint3 = Mint<MOD3>;\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\nconstexpr\
@@ -52,8 +52,8 @@ data:
     \  constexpr Mint &operator-=(const Mint &r) noexcept {\n    val -= r.val;\n \
     \   if (val < 0)\n      val += MOD;\n    return *this;\n  }\n  constexpr Mint\
     \ &operator*=(const Mint &r) noexcept {\n    val = val * r.val % MOD;\n    return\
-    \ *this;\n  }\n  constexpr Mint operator==(const Mint &r) const noexcept {\n \
-    \   return this->val == r.val;\n  }\n  constexpr Mint operator!=(const Mint &r)\
+    \ *this;\n  }\n  constexpr bool operator==(const Mint &r) const noexcept {\n \
+    \   return this->val == r.val;\n  }\n  constexpr bool operator!=(const Mint &r)\
     \ const noexcept {\n    return this->val != r.val;\n  }\n  friend constexpr istream\
     \ &operator>>(istream &is, Mint<MOD> &x) noexcept {\n    is >> x.val;\n    x.val\
     \ %= MOD;\n    if (x.val < 0)\n      x.val += MOD;\n    return is;\n  }\n  friend\
@@ -64,15 +64,15 @@ data:
     \      : fact(n, 1), inv(n, 1), fact_inv(n, 1) {\n    int MOD = fact[0].get_mod();\n\
     \    for (int i = 2; i < n; ++i) {\n      fact[i] = fact[i - 1] * i;\n      inv[i]\
     \ = -inv[MOD % i] * (MOD / i);\n      fact_inv[i] = fact_inv[i - 1] * inv[i];\n\
-    \    }\n  }\n\nprivate:\n  constexpr T combination(int n, int k) const noexcept\
-    \ {\n    if (n < k || n < 0 || k < 0)\n      return 0;\n    return fact[n] * fact_inv[k]\
+    \    }\n  }\n\n  constexpr T combination(int n, int k) const noexcept {\n    if\
+    \ (n < k || n < 0 || k < 0)\n      return 0;\n    return fact[n] * fact_inv[k]\
     \ * fact_inv[n - k];\n  }\n};\n\nusing Mint1 = Mint<MOD1>;\nusing Mint2 = Mint<MOD2>;\n\
     using Mint3 = Mint<MOD3>;\n"
   dependsOn: []
   isVerificationFile: false
   path: src/math/mod_int.hpp
   requiredBy: []
-  timestamp: '2022-12-25 17:10:47+09:00'
+  timestamp: '2023-01-07 13:16:16+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/math/mod_int.hpp
