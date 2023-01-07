@@ -39,17 +39,18 @@ data:
     template <typename T = long long> using Graph = vector<Edges<T>>;\n\ntemplate\
     \ <typename T = long long> using Matrix = vector<vector<T>>;\n#line 8 \"src/graph/kruskul.hpp\"\
     \n\ntemplate <typename T> struct Kruskal {\nprivate:\n  int v;\n  Edges<T> es;\n\
-    \  UnionFindTree uft;\n  long long cost_sum = 0;\n\npublic:\n  Kruskal(int v)\
-    \ : v(v), uft(v) {}\n\n  void add_edge(int from, int to, T cost) { es.emplace_back(from,\
-    \ to, cost); }\n\n  void build() {\n    sort(es.begin(), es.end(), [](const Edge<T>\
-    \ &e1, const Edge<T> &e2) {\n      return e1.cost < e2.cost;\n    });\n    for\
-    \ (Edge<T> &e : es) {\n      if (!uft.is_same(e.from, e.to)) {\n        uft.unite(e.from,\
-    \ e.to);\n        cost_sum += e.cost;\n      }\n    }\n  }\n\n  T get_cost_sum()\
-    \ { return cost_sum; }\n};\n#line 9 \"test/aoj/grl_2_a.test.cpp\"\n\nint main()\
-    \ {\n  int V, E;\n  cin >> V >> E;\n  Kruskal<long long> kruskal(V);\n  for (int\
-    \ i = 0; i < E; ++i) {\n    int s, t, d;\n    cin >> s >> t >> d;\n    kruskal.add_edge(s,\
-    \ t, d);\n  }\n  kruskal.build();\n  cout << kruskal.get_cost_sum() << endl;\n\
-    \  return 0;\n}\n"
+    \  UnionFindTree uft;\n  long long cost_sum = 0;\n  Edges<T> ans_es;\n\npublic:\n\
+    \  Kruskal(int v) : v(v), uft(v) {}\n\n  void add_edge(int from, int to, T cost)\
+    \ { es.emplace_back(from, to, cost); }\n\n  void build() {\n    sort(es.begin(),\
+    \ es.end(), [](const Edge<T> &e1, const Edge<T> &e2) {\n      return e1.cost <\
+    \ e2.cost;\n    });\n    for (Edge<T> &e : es) {\n      if (!uft.is_same(e.from,\
+    \ e.to)) {\n        uft.unite(e.from, e.to);\n        cost_sum += e.cost;\n  \
+    \      ans_es.emplace_back(e);\n      }\n    }\n  }\n\n  T get_cost_sum() { return\
+    \ cost_sum; }\n\n  Edges<T> get_edges() { return ans_es; }\n};\n#line 9 \"test/aoj/grl_2_a.test.cpp\"\
+    \n\nint main() {\n  int V, E;\n  cin >> V >> E;\n  Kruskal<long long> kruskal(V);\n\
+    \  for (int i = 0; i < E; ++i) {\n    int s, t, d;\n    cin >> s >> t >> d;\n\
+    \    kruskal.add_edge(s, t, d);\n  }\n  kruskal.build();\n  cout << kruskal.get_cost_sum()\
+    \ << endl;\n  return 0;\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n  \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../../src/graph/kruskul.hpp\"\
@@ -65,7 +66,7 @@ data:
   isVerificationFile: true
   path: test/aoj/grl_2_a.test.cpp
   requiredBy: []
-  timestamp: '2022-12-19 02:10:28+09:00'
+  timestamp: '2023-01-08 01:56:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/grl_2_a.test.cpp

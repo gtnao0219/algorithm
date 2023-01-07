@@ -83,6 +83,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/search/binary_search.hpp
       title: src/search/binary_search.hpp
+    - icon: ':warning:'
+      path: src/search/bit_full_search.hpp
+      title: src/search/bit_full_search.hpp
+    - icon: ':warning:'
+      path: src/search/real_binary_search.hpp
+      title: src/search/real_binary_search.hpp
   - name: src/string
     pages:
     - icon: ':heavy_check_mark:'

@@ -34,30 +34,32 @@ data:
     template <typename T = long long> using Graph = vector<Edges<T>>;\n\ntemplate\
     \ <typename T = long long> using Matrix = vector<vector<T>>;\n#line 8 \"src/graph/kruskul.hpp\"\
     \n\ntemplate <typename T> struct Kruskal {\nprivate:\n  int v;\n  Edges<T> es;\n\
-    \  UnionFindTree uft;\n  long long cost_sum = 0;\n\npublic:\n  Kruskal(int v)\
-    \ : v(v), uft(v) {}\n\n  void add_edge(int from, int to, T cost) { es.emplace_back(from,\
-    \ to, cost); }\n\n  void build() {\n    sort(es.begin(), es.end(), [](const Edge<T>\
-    \ &e1, const Edge<T> &e2) {\n      return e1.cost < e2.cost;\n    });\n    for\
-    \ (Edge<T> &e : es) {\n      if (!uft.is_same(e.from, e.to)) {\n        uft.unite(e.from,\
-    \ e.to);\n        cost_sum += e.cost;\n      }\n    }\n  }\n\n  T get_cost_sum()\
-    \ { return cost_sum; }\n};\n"
+    \  UnionFindTree uft;\n  long long cost_sum = 0;\n  Edges<T> ans_es;\n\npublic:\n\
+    \  Kruskal(int v) : v(v), uft(v) {}\n\n  void add_edge(int from, int to, T cost)\
+    \ { es.emplace_back(from, to, cost); }\n\n  void build() {\n    sort(es.begin(),\
+    \ es.end(), [](const Edge<T> &e1, const Edge<T> &e2) {\n      return e1.cost <\
+    \ e2.cost;\n    });\n    for (Edge<T> &e : es) {\n      if (!uft.is_same(e.from,\
+    \ e.to)) {\n        uft.unite(e.from, e.to);\n        cost_sum += e.cost;\n  \
+    \      ans_es.emplace_back(e);\n      }\n    }\n  }\n\n  T get_cost_sum() { return\
+    \ cost_sum; }\n\n  Edges<T> get_edges() { return ans_es; }\n};\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
     \ \"../structure/union_find_tree.hpp\"\n#include \"./template.hpp\"\n\ntemplate\
     \ <typename T> struct Kruskal {\nprivate:\n  int v;\n  Edges<T> es;\n  UnionFindTree\
-    \ uft;\n  long long cost_sum = 0;\n\npublic:\n  Kruskal(int v) : v(v), uft(v)\
-    \ {}\n\n  void add_edge(int from, int to, T cost) { es.emplace_back(from, to,\
-    \ cost); }\n\n  void build() {\n    sort(es.begin(), es.end(), [](const Edge<T>\
+    \ uft;\n  long long cost_sum = 0;\n  Edges<T> ans_es;\n\npublic:\n  Kruskal(int\
+    \ v) : v(v), uft(v) {}\n\n  void add_edge(int from, int to, T cost) { es.emplace_back(from,\
+    \ to, cost); }\n\n  void build() {\n    sort(es.begin(), es.end(), [](const Edge<T>\
     \ &e1, const Edge<T> &e2) {\n      return e1.cost < e2.cost;\n    });\n    for\
     \ (Edge<T> &e : es) {\n      if (!uft.is_same(e.from, e.to)) {\n        uft.unite(e.from,\
-    \ e.to);\n        cost_sum += e.cost;\n      }\n    }\n  }\n\n  T get_cost_sum()\
-    \ { return cost_sum; }\n};\n"
+    \ e.to);\n        cost_sum += e.cost;\n        ans_es.emplace_back(e);\n     \
+    \ }\n    }\n  }\n\n  T get_cost_sum() { return cost_sum; }\n\n  Edges<T> get_edges()\
+    \ { return ans_es; }\n};\n"
   dependsOn:
   - src/structure/union_find_tree.hpp
   - src/graph/template.hpp
   isVerificationFile: false
   path: src/graph/kruskul.hpp
   requiredBy: []
-  timestamp: '2022-12-19 02:10:28+09:00'
+  timestamp: '2023-01-08 01:56:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl_2_a.test.cpp
