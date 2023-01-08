@@ -25,7 +25,11 @@ data:
     \ y) {\n    x = root(x);\n    y = root(y);\n    if (x == y) {\n      return;\n\
     \    }\n    if (rank[x] < rank[y]) {\n      swap(x, y);\n    }\n    if (rank[x]\
     \ == rank[y]) {\n      ++rank[x];\n    }\n    parent[y] = x;\n  }\n\n  bool is_same(int\
-    \ x, int y) { return root(x) == root(y); }\n};\n"
+    \ x, int y) { return root(x) == root(y); }\n\n  vector<vector<int>> groups() {\n\
+    \    vector<vector<int>> ret(n);\n    for (int i = 0; i < n; i++) {\n      ret[root(i)].emplace_back(i);\n\
+    \    }\n    ret.erase(remove_if(begin(ret), end(ret),\n                      \
+    \  [&](const vector<int> &v) { return v.empty(); }),\n              end(ret));\n\
+    \    return ret;\n  }\n};\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\nstruct\
     \ UnionFindTree {\nprivate:\n  int n;\n  vector<int> parent, rank;\n\npublic:\n\
     \  UnionFindTree(int n) : n(n), parent(n, -1), rank(n, 0) {}\n\n  int root(int\
@@ -34,13 +38,17 @@ data:
     \    y = root(y);\n    if (x == y) {\n      return;\n    }\n    if (rank[x] <\
     \ rank[y]) {\n      swap(x, y);\n    }\n    if (rank[x] == rank[y]) {\n      ++rank[x];\n\
     \    }\n    parent[y] = x;\n  }\n\n  bool is_same(int x, int y) { return root(x)\
-    \ == root(y); }\n};\n"
+    \ == root(y); }\n\n  vector<vector<int>> groups() {\n    vector<vector<int>> ret(n);\n\
+    \    for (int i = 0; i < n; i++) {\n      ret[root(i)].emplace_back(i);\n    }\n\
+    \    ret.erase(remove_if(begin(ret), end(ret),\n                        [&](const\
+    \ vector<int> &v) { return v.empty(); }),\n              end(ret));\n    return\
+    \ ret;\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: src/structure/union_find_tree.hpp
   requiredBy:
   - src/graph/kruskul.hpp
-  timestamp: '2022-12-18 22:46:34+09:00'
+  timestamp: '2023-01-08 21:46:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl_2_a.test.cpp

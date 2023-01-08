@@ -32,7 +32,11 @@ data:
     \    y = root(y);\n    if (x == y) {\n      return;\n    }\n    if (rank[x] <\
     \ rank[y]) {\n      swap(x, y);\n    }\n    if (rank[x] == rank[y]) {\n      ++rank[x];\n\
     \    }\n    parent[y] = x;\n  }\n\n  bool is_same(int x, int y) { return root(x)\
-    \ == root(y); }\n};\n#line 2 \"src/graph/template.hpp\"\n\n#line 4 \"src/graph/template.hpp\"\
+    \ == root(y); }\n\n  vector<vector<int>> groups() {\n    vector<vector<int>> ret(n);\n\
+    \    for (int i = 0; i < n; i++) {\n      ret[root(i)].emplace_back(i);\n    }\n\
+    \    ret.erase(remove_if(begin(ret), end(ret),\n                        [&](const\
+    \ vector<int> &v) { return v.empty(); }),\n              end(ret));\n    return\
+    \ ret;\n  }\n};\n#line 2 \"src/graph/template.hpp\"\n\n#line 4 \"src/graph/template.hpp\"\
     \nusing namespace std;\n\ntemplate <typename T = long long> struct Edge {\n  int\
     \ from, to;\n  T cost;\n  Edge(int from, int to, T cost = 1) : from(from), to(to),\
     \ cost(cost) {}\n};\n\ntemplate <typename T = long long> using Edges = vector<Edge<T>>;\n\
@@ -66,7 +70,7 @@ data:
   isVerificationFile: true
   path: test/aoj/grl_2_a.test.cpp
   requiredBy: []
-  timestamp: '2023-01-08 01:56:20+09:00'
+  timestamp: '2023-01-08 21:46:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/grl_2_a.test.cpp

@@ -25,11 +25,15 @@ data:
     \    y = root(y);\n    if (x == y) {\n      return;\n    }\n    if (rank[x] <\
     \ rank[y]) {\n      swap(x, y);\n    }\n    if (rank[x] == rank[y]) {\n      ++rank[x];\n\
     \    }\n    parent[y] = x;\n  }\n\n  bool is_same(int x, int y) { return root(x)\
-    \ == root(y); }\n};\n#line 8 \"test/aoj/dsl_1_a.test.cpp\"\n\nint main() {\n \
-    \ int n, q;\n  cin >> n >> q;\n  UnionFindTree uft(n);\n  for (int i = 0; i <\
-    \ q; ++i) {\n    int com, x, y;\n    cin >> com >> x >> y;\n    if (com == 0)\
-    \ {\n      uft.unite(x, y);\n    } else {\n      cout << (uft.is_same(x, y) ?\
-    \ 1 : 0) << endl;\n    }\n  }\n  return 0;\n}\n"
+    \ == root(y); }\n\n  vector<vector<int>> groups() {\n    vector<vector<int>> ret(n);\n\
+    \    for (int i = 0; i < n; i++) {\n      ret[root(i)].emplace_back(i);\n    }\n\
+    \    ret.erase(remove_if(begin(ret), end(ret),\n                        [&](const\
+    \ vector<int> &v) { return v.empty(); }),\n              end(ret));\n    return\
+    \ ret;\n  }\n};\n#line 8 \"test/aoj/dsl_1_a.test.cpp\"\n\nint main() {\n  int\
+    \ n, q;\n  cin >> n >> q;\n  UnionFindTree uft(n);\n  for (int i = 0; i < q; ++i)\
+    \ {\n    int com, x, y;\n    cin >> com >> x >> y;\n    if (com == 0) {\n    \
+    \  uft.unite(x, y);\n    } else {\n      cout << (uft.is_same(x, y) ? 1 : 0) <<\
+    \ endl;\n    }\n  }\n  return 0;\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n  \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../../src/structure/union_find_tree.hpp\"\
@@ -42,7 +46,7 @@ data:
   isVerificationFile: true
   path: test/aoj/dsl_1_a.test.cpp
   requiredBy: []
-  timestamp: '2022-12-18 22:46:34+09:00'
+  timestamp: '2023-01-08 21:46:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/dsl_1_a.test.cpp
