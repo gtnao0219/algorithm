@@ -34,4 +34,15 @@ public:
   }
 
   bool is_same(int x, int y) { return root(x) == root(y); }
+
+  vector<vector<int>> groups() {
+    vector<vector<int>> ret(n);
+    for (int i = 0; i < n; i++) {
+      ret[root(i)].emplace_back(i);
+    }
+    ret.erase(remove_if(begin(ret), end(ret),
+                        [&](const vector<int> &v) { return v.empty(); }),
+              end(ret));
+    return ret;
+  }
 };
