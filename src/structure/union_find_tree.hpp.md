@@ -51,8 +51,8 @@ data:
   timestamp: '2023-01-08 21:46:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/grl_2_a.test.cpp
   - test/aoj/dsl_1_a.test.cpp
+  - test/aoj/grl_2_a.test.cpp
 documentation_of: src/structure/union_find_tree.hpp
 layout: document
 redirect_from:
