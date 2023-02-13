@@ -23,6 +23,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/flow/ford_fulkerson.hpp
       title: src/flow/ford_fulkerson.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/flow/primal_dual.hpp
+      title: src/flow/primal_dual.hpp
   - name: src/graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -199,6 +202,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/grl_6_a_2.test.cpp
       title: test/aoj/grl_6_a_2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/grl_6_b.test.cpp
+      title: test/aoj/grl_6_b.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/ntl_1_a.test.cpp
       title: test/aoj/ntl_1_a.test.cpp
