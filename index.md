@@ -98,6 +98,14 @@ data:
     - icon: ':warning:'
       path: src/other/gird.hpp
       title: src/other/gird.hpp
+  - name: src/search/bfs
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/search/bfs/has_directed_cycle.hpp
+      title: src/search/bfs/has_directed_cycle.hpp
+    - icon: ':question:'
+      path: src/search/bfs/topological_sort.hpp
+      title: src/search/bfs/topological_sort.hpp
   - name: src/search
     pages:
     - icon: ':heavy_check_mark:'
@@ -194,8 +202,14 @@ data:
       path: test/aoj/grl_4_a.test.cpp
       title: test/aoj/grl_4_a.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/aoj/grl_4_a_2.test.cpp
+      title: test/aoj/grl_4_a_2.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj/grl_4_b.test.cpp
       title: test/aoj/grl_4_b.test.cpp
+    - icon: ':x:'
+      path: test/aoj/grl_4_b_2.test.cpp
+      title: test/aoj/grl_4_b_2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/grl_5_a.test.cpp
       title: test/aoj/grl_5_a.test.cpp
