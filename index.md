@@ -43,6 +43,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/graph/kruskul.hpp
       title: src/graph/kruskul.hpp
+    - icon: ':warning:'
+      path: src/graph/lca_doubling.hpp
+      title: src/graph/lca_doubling.hpp
     - icon: ':heavy_check_mark:'
       path: src/graph/strongly_connected_components.hpp
       title: src/graph/strongly_connected_components.hpp

@@ -37,7 +37,10 @@ data:
     \    }\n  }\n\n  constexpr T combination(int n, int k) const noexcept {\n    if\
     \ (n < k || n < 0 || k < 0)\n      return 0;\n    return fact[n] * fact_inv[k]\
     \ * fact_inv[n - k];\n  }\n};\n\nusing Mint1 = Mint<MOD1>;\nusing Mint2 = Mint<MOD2>;\n\
-    using Mint3 = Mint<MOD3>;\n"
+    using Mint3 = Mint<MOD3>;\nusing vm1 = vector<Mint1>;\nusing vvm1 = vector<vm1>;\n\
+    using vvvm1 = vector<vvm1>;\nusing vm2 = vector<Mint2>;\nusing vvm2 = vector<vm2>;\n\
+    using vvvm2 = vector<vvm2>;\nusing vm3 = vector<Mint3>;\nusing vvm3 = vector<vm3>;\n\
+    using vvvm3 = vector<vvm3>;\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\nconstexpr\
     \ int MOD1 = 1000000007;\nconstexpr int MOD2 = 998244353;\nconstexpr int MOD3\
     \ = 1000000009;\n\ntemplate <int MOD> struct Mint {\n  long long val;\n  constexpr\
@@ -67,12 +70,15 @@ data:
     \    }\n  }\n\n  constexpr T combination(int n, int k) const noexcept {\n    if\
     \ (n < k || n < 0 || k < 0)\n      return 0;\n    return fact[n] * fact_inv[k]\
     \ * fact_inv[n - k];\n  }\n};\n\nusing Mint1 = Mint<MOD1>;\nusing Mint2 = Mint<MOD2>;\n\
-    using Mint3 = Mint<MOD3>;\n"
+    using Mint3 = Mint<MOD3>;\nusing vm1 = vector<Mint1>;\nusing vvm1 = vector<vm1>;\n\
+    using vvvm1 = vector<vvm1>;\nusing vm2 = vector<Mint2>;\nusing vvm2 = vector<vm2>;\n\
+    using vvvm2 = vector<vvm2>;\nusing vm3 = vector<Mint3>;\nusing vvm3 = vector<vm3>;\n\
+    using vvvm3 = vector<vvm3>;\n"
   dependsOn: []
   isVerificationFile: false
   path: src/math/mod_int.hpp
   requiredBy: []
-  timestamp: '2023-01-07 13:16:16+09:00'
+  timestamp: '2023-02-26 20:42:04+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/math/mod_int.hpp
