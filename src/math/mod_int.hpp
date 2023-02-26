@@ -84,3 +84,12 @@ public:
 using Mint1 = Mint<MOD1>;
 using Mint2 = Mint<MOD2>;
 using Mint3 = Mint<MOD3>;
+using vm1 = vector<Mint1>;
+using vvm1 = vector<vm1>;
+using vvvm1 = vector<vvm1>;
+using vm2 = vector<Mint2>;
+using vvm2 = vector<vm2>;
+using vvvm2 = vector<vvm2>;
+using vm3 = vector<Mint3>;
+using vvm3 = vector<vm3>;
+using vvvm3 = vector<vvm3>;
